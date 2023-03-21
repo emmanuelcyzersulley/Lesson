@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="form">
+        <form action="">
+            <div>
+                <label for="">Name</label>
+                <input type="text" id="name">   
+                <small id="name-error" style="color: red;"></small> 
+            </div>
+            <div>
+                <label for="">E-mail</label>
+                <input type="text" id="email>">
+            </div>
+            <div>
+                <label for="">Website</label>
+                <input type="text" id="Website">
+            </div>
+            <div>
+                <label for="">Comment</label>
+                <textarea name="comment" id="comment" rows="10" id="comment"></textarea>
+            </div>
+            <div>
+                <label for=""Gender></label>
+                <div>
+                    <input type="radio" id="male">
+                    <label for="">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female">
+                    <label for="">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="other">
+                    <label for="">Other</label>
+                </div>
+
+            </div>
+            
+            <input type="submit" id="submitBtn" value="save">
+
+            
+                
+        </form>
+    </div>
+    <div id="thanks">
+
+    </div>
+    <script>
+        let sumbitBtn = document.getElementById("submitBtn");
+
+        sumbitBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            let form = document.getElementById("form");
+            let thanks = document.getElementById("thanks");
+
+            let nameError = document.getElementById("name-error");
+            let name = document.getElementById("name").value;
+            
+
+            if(name == null || name =="" ){
+                nameError.innerText = "Name feild is required";
+            }else if(name.length < 3){
+                nameError.innerText = "Name field is must be a minimum of 3 characters";
+
+            }else {
+                form.style.display = "none";
+                thanks.innerHTML = "<b>Thanks you for submitting this form</b>";
+
+            }
+
+
+                   });
+    </script>
+</body>
+</html>
